@@ -16,11 +16,6 @@ const etServer = express()
 
 //use cors in express server
 etServer.use(cors())
-const corsOptions = { 
-    origin: "*",  
-    credentials: true
-};
-etServer.use(cors(corsOptions));
 
 // before routing data need to be convert to understandable to js (parse)
 etServer.use(express.json())
