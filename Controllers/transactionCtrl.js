@@ -21,16 +21,16 @@ exports.addTransaction = async (req, res) => {
 
 
   //get all  transaction
-  exports.getAllTransaction = async (req,res)=>{
+  // exports.getAllTransaction = async (req,res)=>{
 
-    try{
-        const allTransactions = await transaction.find()
-        res.status(200).json(allTransactions)
-    }catch(err){
-        res.status(401).json(err)
+  //   try{
+  //       const allTransactions = await transaction.find()
+  //       res.status(200).json(allTransactions)
+  //   }catch(err){
+  //       res.status(401).json(err)
  
-    }
-  }
+  //   }
+  // }
 
 
   //get user transactions
@@ -55,7 +55,7 @@ exports.addTransaction = async (req, res) => {
     const userId = req.payload
     const {category,type,amount} = req.body
     try{
-   const updatedTransaction = await transaction.findByIdAndUpdate({_id:tid},{category,type,amount,userId},{new:true})
+   const updatedTransaction = await transaction.findByIdAndUpdate(tid,{category,type,amount,userId},{new:true})
    await updatedTransaction.save()
    res.status(200).json(updatedTransaction)
 
@@ -71,7 +71,7 @@ exports.addTransaction = async (req, res) => {
     const {tid} = req.params
 
     try{
-        const transactionDetails = await transaction.findByIdAndDelete({_id:tid})
+        const transactionDetails = await transaction.findByIdAndDelete(tid)
         res.status(200).json(transactionDetails)
 
     }catch(err){

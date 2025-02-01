@@ -17,7 +17,7 @@ exports.register = async (req,res)=>{
         //else stote data to db
         const newUser = new users({
             //key is same therefore give only name
-            username,email,password,github:"",linkedin:"",profile:""
+            username,email,password
         })
         //to store data to mongodb from mongoose model
         await newUser.save()

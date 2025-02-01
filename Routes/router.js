@@ -15,7 +15,7 @@ router.post('/login',userController.login)
 router.post('/addTransaction',jwtMiddleware,transactionCtrl.addTransaction);
 
 //get all transaction
-router.get('/getAllTransaction',jwtMiddleware,transactionCtrl.getAllTransaction)
+// router.get('/getAllTransaction',jwtMiddleware,transactionCtrl.getAllTransaction)
 
 //get user transaction
 router.get('/getUserTransaction',jwtMiddleware,transactionCtrl.getUserTransaction)
